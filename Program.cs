@@ -20,12 +20,12 @@ class Program
                 HttpResponseMessage response = await client.GetAsync($"http://{args[0]}/{word}/flag.txt");
                 if(response.StatusCode == HttpStatusCode.OK)
                 {
-                    Console.WriteLine($"File found at: {args[0]}/{word}");
+                    Console.WriteLine($"File found at: http://{args[0]}/{word}");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine($"No subdirectories found at http://{args[0]}/{word}");
+                    Console.WriteLine($"Error {response.StatusCode} at: http://{args[0]}/{word}");
                 }
             }
         }
