@@ -25,7 +25,7 @@ class Program
                 }
                 else
                 {
-                    Console.WriteLine($"Error {response.StatusCode} at: http://{args[0]}/{word}");
+                    Console.WriteLine($"Error {(int)response.StatusCode} at: http://{args[0]}/{word}");
                 }
             }
         }
